@@ -1,2 +1,0 @@
-#!/bin/bash
-/tmp/h$ tail -1 0-iam_victor | wc -c9
