@@ -1,2 +1,2 @@
 #!/bin/bash
-list -n 1 "iacta" >> "iacta"
+list -n 1 iacta >> iacta
