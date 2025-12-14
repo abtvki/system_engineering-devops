@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+# This script displays numbers 1-20, printing specific "bad luck" messages for 4, 9, and 17 using a case statement.
+
+# 1. Initialize the counter, starting at 1
+COUNT=1
+
+# 2. Start the while loop (runs for iterations 1 through 20)
+while [ $COUNT -le 20 ]
+do
+    # 3. Start the CASE statement, checking the value of $COUNT
+    case $COUNT in
+        # Pattern 1: If COUNT is 4
+        4)
+            echo $COUNT
+            echo "bad luck from China"
+            ;; # End of pattern 4 block
+
+        # Pattern 2: If COUNT is 9
+        9)
+            echo $COUNT
+            echo "bad luck from Japan"
+            ;; # End of pattern 9 block
+
+        # Pattern 3: If COUNT is 17
+        17)
+            echo $COUNT
+            echo "bad luck from Italy"
+            ;; # End of pattern 17 block
+
+        # Default Pattern: For all other values (1, 2, 3, 5-8, 10-16, 18-20)
+        *)
+            echo $COUNT
+            ;; # End of default block
+    esac # End of the case statement
+
+    # 4. Increment the counter
+    COUNT=$((COUNT + 1))
+done
