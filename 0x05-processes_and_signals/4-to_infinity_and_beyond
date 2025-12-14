@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# This script continuously displays "To infinity and beyond" every 2 seconds until killed.
+
+# The 'while true' construct creates an infinite loop that runs until explicitly stopped (e.g., via Ctrl+C).
+while true
+do
+    # Display the required phrase
+    echo "To infinity and beyond"
+    
+    # Pause the execution for 2 seconds
+    sleep 2
+done
