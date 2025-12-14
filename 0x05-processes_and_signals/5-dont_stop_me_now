@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# This script finds the PID of the '4-to_infinity_and_beyond' process and stops it gracefully.
+
+# Find the PID of the target script using pgrep:
+# The -f flag searches the full command line, not just the process name, 
+# ensuring we find the exact script (e.g., './4-to_infinity_and_beyond').
+# We use command substitution to store the PID in a variable.
+PID=$(pgrep -f "4-to_infinity_and_beyond")
+
+# Check if a PID was found
+if [ -z "$PID" ]; then
+    echo "Process '4-to_infinity_and_beyond' not found."
+else
+    # Use the kill command to send the default signal (SIGTERM, or 15) to the found PID.
+    # SIGTERM requests the process to terminate gracefully.
+    # The command is: kill <PID>
+    kill "$PID"
+    # Note: We don't print "Terminated" here; the original script prints it 
+    # when it receives the signal and cleanly exits.
+fi
