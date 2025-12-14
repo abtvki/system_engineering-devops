@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+# This script lists non-hidden files in the current directory, showing only the part of the name after the first dash.
+
+# 1. Iterate through all non-hidden files/directories in the current directory
+for FILE in *
+do
+    # 2. Check if the current item is an actual file/directory and not just a pattern that failed to expand
+    # The -f check is a common way to ensure you're dealing with a file, 
+    # but the simplest approach to handle the requirement is to check for the dash.
+    
+    # 3. Use parameter expansion to remove the part of the string up to and including the first dash (-)
+    # ${FILE#*-} means: Remove the shortest match of the pattern '*-' 
+    # (everything from the start of the string up to and including the first dash) from the front of $FILE.
+    
+    # Check if the filename contains a dash before processing
+    if [[ "$FILE" == *_* ]]; then
+        # Check if the filename contains an underscore as a placeholder for the dash
+        # The example output suggests that filenames use the dash (-) as the separator.
+        # Let's use the dash separator as per the task description and example.
+        if [[ "$FILE" == *[-]** ]]; then
+            # Extract the substring after the first dash
+            # The result is stored in the variable SUBSTRING
+            SUBSTRING=${FILE#*-}
+        
+            # 4. Display the extracted substring
+            echo "$SUBSTRING"
+        fi
+    fi
+
+done
