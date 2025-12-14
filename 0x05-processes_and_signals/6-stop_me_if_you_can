@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# This script finds and stops the '4-to_infinity_and_beyond' process using pkill.
+
+# Use the pkill command to send the SIGTERM signal (default, for graceful shutdown)
+# to any process whose full command line matches the pattern.
+# -f: Match the pattern against the full command line (which includes the script's path).
+pkill -f "4-to_infinity_and_beyond"
