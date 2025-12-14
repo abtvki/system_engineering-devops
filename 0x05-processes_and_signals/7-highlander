@@ -4,13 +4,13 @@
 # Function to handle the SIGTERM signal
 handle_term() {
     echo "I am invincible!!!"
-    # Note: No 'exit' command here, which is what allows the loop to continue.
+    # The absence of the 'exit' command allows the loop to continue.
 }
 
 # Use the trap command to catch SIGTERM (signal 15) and execute the handle_term function.
 trap 'handle_term' SIGTERM
 
-# Infinite loop (same as task 4)
+# Infinite loop
 while true
 do
     echo "To infinity and beyond"
