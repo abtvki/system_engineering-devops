@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# This script runs indefinitely and prints a message when it receives a SIGTERM signal, but does not terminate.
+
+# Function to handle the SIGTERM signal
+handle_term() {
+    echo "I am invincible!!!"
+    # Note: No 'exit' command here, which is what allows the loop to continue.
+}
+
+# Use the trap command to catch SIGTERM (signal 15) and execute the handle_term function.
+trap 'handle_term' SIGTERM
+
+# Infinite loop (same as task 4)
+while true
+do
+    echo "To infinity and beyond"
+    sleep 2
+done
