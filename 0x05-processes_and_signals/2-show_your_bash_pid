@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# This script lists all processes and filters the output to show only lines containing 'bash'.
+# shellcheck disable=SC2009
+
+# 1. 'ps aux': List all processes in a user-oriented format.
+# 2. '| grep bash': Pipe the entire output to the 'grep' command, 
+#    which filters the output to only display lines that contain the pattern 'bash'.
+ps aux | grep bash
