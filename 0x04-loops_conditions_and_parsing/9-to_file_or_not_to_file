@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+# This script checks for the existence, emptiness, and type of a file named 'school'.
+
+# Define the file name
+FILE="school"
+
+# 1. Check for existence: Use the -e operator
+if [ -e "$FILE" ]; then
+    # File exists branch
+    echo "$FILE file exists"
+
+    # 2. Check for emptiness (only if the file exists)
+    # The -s operator checks if the file has a size greater than zero (i.e., is NOT empty)
+    if [ -s "$FILE" ]; then
+        echo "$FILE file is not empty"
+    else
+        # The file exists but -s is false, meaning it is empty
+        echo "$FILE file is empty"
+    fi
+
+    # 3. Check for regular file type (only if the file exists)
+    # The -f operator checks if the file is a regular file
+    if [ -f "$FILE" ]; then
+        echo "$FILE is a regular file"
+    # If it is not a regular file (e.g., a directory, link, etc.), 
+    # we follow the requirement to print nothing for this check.
+    fi
+
+else
+    # File does not exist branch
+    echo "$FILE file does not exist"
+
+fi
