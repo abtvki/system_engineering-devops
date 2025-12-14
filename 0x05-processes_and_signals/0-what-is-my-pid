@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 # This script displays its own Process ID (PID).
 
-# The special variable $$, also known as $-$, holds the PID of the current shell (or script).
 echo $$
