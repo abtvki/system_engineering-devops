@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# This script displays a list of all currently running processes in a user-oriented, hierarchical tree format.
+
+# Use the 'ps' command with the following flags:
+# - 'a': Show processes for all users (not just processes associated with a terminal).
+# - 'u': Display in a user-oriented format (includes USER, %CPU, %MEM, etc.).
+# - 'x': Show processes without an attached terminal (TTY).
+# - 'f': Display the output in a "forest" format, which visualizes the process hierarchy (parent/child relationships).
+ps auxf
